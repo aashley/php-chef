@@ -153,7 +153,7 @@ class Chef {
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $this->timeout);
         curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $method);
-        
+
         // most people are using self-signed certs for chef, so its easiest to just
         // disable ssl verification
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
@@ -175,7 +175,7 @@ class Chef {
         if ($raw_response !== FALSE)
         {
             // decode json
-            $response = json_decode($raw_response);
+            $response = json_decode($raw_response, true);
 
             // throw exception if there was an error
             if ($status != 200 && isset($response->error))

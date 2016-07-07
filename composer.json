@@ -1,11 +1,15 @@
 {
-    "name": "jenssegers/chef",
+    "name": "aashley/chef",
     "description": "Opscode Chef API library",
-    "keywords": ["laravel","chef"],
+    "keywords": ["chef"],
     "authors": [
         {
             "name": "Jens Segers",
             "email": "hello@jenssegers.be"
+        },
+        {
+            "name": "Adam Ashley",
+            "email": "aashley@adamashley.name"
         }
     ],
     "license" : "MIT",

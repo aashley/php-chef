@@ -5,14 +5,16 @@ The Chef Server API is used to provide access to objects on the Chef Server, inc
 
 *This is a generic library and has additional support for the Laravel framework.*
 
+This is forked from https://github.com/aashley/php-chef I have some different requirements and will be maintaining it independantly
+
 Installation
 ------------
 
-Add `jenssegers/chef` as a requirement to composer.json:
+Add `aashley/chef` as a requirement to composer.json:
 
     {
         "require": {
-            "jenssegers/chef": "dev-master"
+            "aashley/chef": "dev-master"
         }
     }
 
@@ -25,7 +27,7 @@ Create a chef object like this:
 
     // composer
     require_once 'vendor/autoload.php';
-    use Jenssegers\Chef\Chef;
+    use aashley\Chef\Chef;
     
     // create chef object
     $chef = new Chef($server, $client, $key, $version);
@@ -60,24 +62,3 @@ Delete a data bag:
 
     $chef->delete('/data/test/item');
     
-Laravel
--------
- 
-Register the Chef package with Laravel in `app/config/app.php`, add the following provider:
-
-    'Jenssegers\Chef\ChefServiceProvider',
-
-And this alias:
-
-    'Chef'            => 'Jenssegers\Chef\Facades\Chef'
-
-Create a copy of the configuration file using Artisan:
-
-    php artisan config:publish jenssegers/chef
-
-Edit the created configuration file in `app/config/packages/jenssegers/chef/config.php` to match your environment:
-
-    'server'  = the URL for the Chef Server
-    'client'  = the name used when authenticating to a Chef Server
-    'key'     = the location of the file which contains the client key
-    'version' = the version of the Chef Server API that is being used
