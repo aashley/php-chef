@@ -178,11 +178,11 @@ class Chef {
             $response = json_decode($raw_response, true);
 
             // throw exception if there was an error
-            if ($status != 200 && isset($response->error))
+            if ($status != 200 && isset($response['error']))
             {
-                $message = $response->error;
-                if(is_array($response->error)){
-                    $message = reset($response->error);
+                $message = $response['error'];
+                if(is_array($response['error'])){
+                    $message = reset($response['error']);
                 }
                 throw new \Exception($message, $status);
             }
