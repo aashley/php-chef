@@ -29,7 +29,7 @@ class Chef {
         $this->key = $key;
         $this->version = $version;
         $this->reportingVersion = $reportingVersion;
-        
+
         // get private key content
         if (file_exists($key))
         {
@@ -211,7 +211,7 @@ class Chef {
 
         // generate initialization vector
         $size = openssl_cipher_iv_length($method);
-        $iv = mcrypt_create_iv($size, MCRYPT_RAND);
+        $iv = random_bytes($size);
 
         // check if file name was given
         if (file_exists($key))
