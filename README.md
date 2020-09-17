@@ -5,7 +5,7 @@ The Chef Server API is used to provide access to objects on the Chef Server, inc
 
 *This is a generic library and has additional support for the Laravel framework.*
 
-This is forked from https://github.com/aashley/php-chef I have some different requirements and will be maintaining it independantly
+This is forked from https://github.com/jenssegers/php-chef I have some different requirements and will be maintaining it independantly
 
 Installation
 ------------
