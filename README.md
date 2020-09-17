@@ -5,18 +5,14 @@ The Chef Server API is used to provide access to objects on the Chef Server, inc
 
 *This is a generic library and has additional support for the Laravel framework.*
 
-This is forked from https://github.com/jenssegers/php-chef I have some different requirements and will be maintaining it independantly
+This is forked from https://github.com/jenssegers/php-chef I have some different requirements and will be maintaining it independantly. For legacy compatibility reasons I still use the original packages namespace so this is a drop in replacement.
 
 Installation
 ------------
 
 Add `aashley/chef` as a requirement to composer.json:
 
-    {
-        "require": {
-            "aashley/chef": "dev-master"
-        }
-    }
+    composer require "aashley/chef" "^2.0"
 
 Update your packages with `composer update` or install with `composer install`.
 
@@ -27,7 +23,7 @@ Create a chef object like this:
 
     // composer
     require_once 'vendor/autoload.php';
-    use aashley\Chef\Chef;
+    use Jenssegers\Chef\Chef;
     
     // create chef object
     $chef = new Chef($server, $client, $key, $version);
